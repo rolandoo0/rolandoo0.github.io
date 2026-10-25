@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Rolando Diaz Cruz: analytics engineering with a finance brain. SQL, dbt, Python. Selected work and a filing-rate investigation rebuilt as a dbt pipeline.">
 <meta property="og:title" content="Rolando Diaz Cruz · Analytics Engineering">
-<meta property="og:description" content="Analytics engineering with a finance brain. SQL, dbt, Python. Case study: an on-time filing rate investigation rebuilt as a dbt pipeline.">
+<meta property="og:description" content="Analytics engineering with a finance brain. SQL, dbt, Python.">
 <meta property="og:type" content="website">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Rolando Diaz Cruz · Analytics Engineering</title>
@@ -278,10 +279,9 @@ input[type=range]{width:100%;accent-color:var(--amber);height:28px;cursor:pointe
   <div class="wrap">
     <b><em>$</em> whoami → bi_analyst@blockdaemon<span class="cursor"></span></b>
     <nav aria-label="Sections">
-      <a href="#impact">receipts</a>
+      <a href="#work">work</a>
       <a href="#case">case_study</a>
       <a href="#dbt">dbt</a>
-      <a href="#work">work</a>
       <a class="cta" href="#contact">contact</a>
     </nav>
   </div>
@@ -302,7 +302,7 @@ input[type=range]{width:100%;accent-color:var(--amber);height:28px;cursor:pointe
           <div class="contact-row" style="margin:0 0 20px">
             <button class="btn" id="copyTop" type="button">Copy email</button>
             <a class="btn ghost" href="https://www.linkedin.com/in/rolando-diaz-cruz" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a class="btn ghost" href="#case">See the case study</a>
+            <a class="btn ghost" href="#work">See my work</a>
           </div>
           <div class="meta">
             <span class="chip on">open to analyst, senior &amp; lead roles</span>
@@ -332,19 +332,28 @@ input[type=range]{width:100%;accent-color:var(--amber);height:28px;cursor:pointe
     </div>
   </div>
 
-  <!-- IMPACT -->
-  <section id="impact">
+
+  <!-- WORK -->
+  <section id="work">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">select * from receipts order by impact desc;</p>
-        <h2>The receipts</h2>
-        <p>Nearly five years owning the data that finance, sales and leadership run on at Blockdaemon, a blockchain infrastructure company. Every figure here is one I measured.</p>
+        <p class="eyebrow">git log --oneline blockdaemon/main</p>
+        <h2>Selected work</h2>
+        <p>Nearly five years owning the data that finance, sales and leadership run on at Blockdaemon, a blockchain infrastructure company. The pattern repeats: someone needs a number they can trust, the obvious source is wrong or missing, and I rebuild it from the ground truth. Every figure here is one I measured.</p>
       </div>
       <div class="stats">
         <div class="stat"><span class="k">Month-end close</span><span class="v">7→4<small>hrs</small></span><p>Cut close time ~43% by automating price, customer and revenue data in Python and BigQuery.</p></div>
         <div class="stat"><span class="k">Data reliability</span><span class="v">+30<small>%</small></span><p>Standardized metric definitions and added validation checks that stop bad records before reporting.</p></div>
-        <div class="stat"><span class="k">Partner accounts</span><span class="v">75</span><p>Protected invoice accuracy by reconciling a counterparty's disputed figures cycle by cycle.</p></div>
         <div class="stat"><span class="k">Reporting time</span><span class="v">−95<small>%</small></span><p>Automated aggregation across 80k+ accounts as an intern, which set the tone for everything after.</p></div>
+        <div class="stat"><span class="k">On-time reporting</span><span class="v">40+<small>mo</small></span><p>A monthly revenue-by-customer report that has never shipped late.</p></div>
+      </div>
+      <div class="work" style="margin-top:12px">
+        <article class="card"><span class="big">Churn</span><h3>Customer churn and retention dashboard</h3><p>Built the SQL and Python pipeline that maps Salesforce customer records to account activity, and the dashboard leadership, sales and finance use to see who is leaving.</p><span class="tools">SQL · Python · Salesforce · BigQuery</span></article>
+        <article class="card"><span class="big">NRR</span><h3>“Is our customer base leaking?”</h3><p>Built net revenue retention dashboards in Tableau and segmented outflows, isolating the one large exit behind a feared decline. It became the reference answer.</p><span class="tools">Tableau · SQL</span></article>
+        <article class="card"><span class="big">Root cause</span><h3>Client payouts came in short</h3><p>The payout system's owner said the numbers were right. I rebuilt the revenue-share calculation from transaction data, traced the root cause, and the commercial lead took it to the client.</p><span class="tools">SQL · Python</span></article>
+        <article class="card"><span class="big">75</span><h3>A partner's billing dispute</h3><p>Reconciled a counterparty's disputed figures cycle by cycle and found the matching error in their method before it compounded across all 75 accounts.</p><span class="tools">Block-explorer data · Python</span></article>
+        <article class="card"><span class="big">~2%</span><h3>An accrual when the tooling failed</h3><p>The official script timed out for hours. I found the public source behind it, rebuilt the month-end accrual, and matched an independent estimate within ~2%.</p><span class="tools">Python · APIs</span></article>
+        <article class="card"><span class="big">8</span><h3>Automations handed off, core kept</h3><p>Own a monthly revenue-by-customer report that has shipped on time for 40+ consecutive months, and handed 8 automations to new owners with docs so nothing broke in the move.</p><span class="tools">Python · BigQuery · Looker</span></article>
       </div>
     </div>
   </section>
@@ -354,7 +363,7 @@ input[type=range]{width:100%;accent-color:var(--amber);height:28px;cursor:pointe
     <div class="wrap">
       <div class="case-intro">
         <div>
-          <p class="eyebrow c" style="margin-bottom:14px">case study · tax-filing operations at a payments company · take-home that reached the final round</p>
+          <p class="eyebrow c" style="margin-bottom:14px">deep dive · one investigation, start to finish · tax-filing operations at a payments company</p>
           <h2>Why did filings <span>slip?</span></h2>
         </div>
         <div class="facts">
@@ -504,24 +513,6 @@ input[type=range]{width:100%;accent-color:var(--amber);height:28px;cursor:pointe
     </div>
   </section>
 
-  <!-- WORK -->
-  <section id="work">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">git log --oneline blockdaemon/main</p>
-        <h2>Selected work</h2>
-        <p>Blockdaemon, Feb 2022 to now. The pattern repeats: someone needs a number they can trust, the obvious source is wrong or missing, and I rebuild it from the ground truth.</p>
-      </div>
-      <div class="work">
-        <article class="card"><span class="big">Churn</span><h3>Customer churn and retention dashboard</h3><p>Built the SQL and Python pipeline that maps Salesforce customer records to account activity, and the dashboard leadership, sales and finance use to see who is leaving.</p><span class="tools">SQL · Python · Salesforce · BigQuery</span></article>
-        <article class="card"><span class="big">NRR</span><h3>“Is our customer base leaking?”</h3><p>Built net revenue retention dashboards in Tableau and segmented outflows, isolating the one large exit behind a feared decline. It became the reference answer.</p><span class="tools">Tableau · SQL</span></article>
-        <article class="card"><span class="big">Root cause</span><h3>Client payouts came in short</h3><p>The payout system's owner said the numbers were right. I rebuilt the revenue-share calculation from transaction data, traced the root cause, and the commercial lead took it to the client.</p><span class="tools">SQL · Python</span></article>
-        <article class="card"><span class="big">75</span><h3>A partner's billing dispute</h3><p>Reconciled a counterparty's disputed figures cycle by cycle and found the matching error in their method before it compounded across all 75 accounts.</p><span class="tools">Block-explorer data · Python</span></article>
-        <article class="card"><span class="big">~2%</span><h3>An accrual when the tooling failed</h3><p>The official script timed out for hours. I found the public source behind it, rebuilt the month-end accrual, and matched an independent estimate within ~2%.</p><span class="tools">Python · APIs</span></article>
-        <article class="card"><span class="big">40+</span><h3>Months without a miss</h3><p>Own a monthly revenue-by-customer report that has shipped on time for 40+ consecutive months, and handed 8 automations off to new owners while keeping the core.</p><span class="tools">Python · BigQuery · Looker</span></article>
-      </div>
-    </div>
-  </section>
 
   <!-- PROJECTS + EXPERIENCE -->
   <section>
